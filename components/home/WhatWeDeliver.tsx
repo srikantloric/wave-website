@@ -1,26 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaPlay, FaVolumeUp, FaEllipsisV } from 'react-icons/fa';
+import { FaPlay, FaVolumeUp, FaEllipsisH } from 'react-icons/fa'; // Switched to Horizontal Ellipsis for cleaner look
 
 const WhatWeDeliver = () => {
   return (
-    // 1. OUTER WRAPPER
-    <section className="w-full bg-white py-12 lg:py-20">
-      
-      {/* 2. INNER CONTAINER */}
+    <section className="w-full bg-white py-10 lg:py-16">
       <div className="container mx-auto px-6 lg:px-20">
-        
-        {/* 3. LAYOUT GRID */}
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14 max-w-6xl mx-auto">
           
           {/* Left Text Content */}
-          <div className="w-full lg:flex-1">
-            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-6 text-gray-900 leading-tight">
+          <div className="w-full lg:flex-1 pt-4">
+            <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold mb-5 text-gray-900 leading-tight">
               At Wave we deliver <br /> quality education
             </h2>
             
-            <p className="text-gray-500 text-base xl:text-lg leading-relaxed mb-8 md:mb-10 max-w-lg">
+            <p className="text-gray-600 text-sm md:text-base xl:text-lg leading-relaxed mb-8 max-w-lg">
               We have commitment to improve the teaching and learning in the school community
               by delivering rich, high quality program of international education that shares a
               powerful vision and develops the intellectual, personal, emotional and social skills 
@@ -29,19 +24,18 @@ const WhatWeDeliver = () => {
             
             <Link 
               href="/contact"
-              className="inline-block bg-[#4a56a2] text-white px-8 py-3 md:px-10 md:py-3 rounded-full hover:bg-blue-800 transition shadow-md font-medium text-sm xl:text-base"
+              className="inline-block bg-[#4a56a2] text-white px-8 py-3 rounded-full hover:bg-blue-800 transition shadow-lg font-bold text-sm"
             >
                 Contact Us
             </Link>
           </div>
 
           {/* Right Image/Media Grid */}
-          <div className="w-full lg:flex-1 flex gap-4 md:gap-6 relative">
+          <div className="w-full lg:flex-1 flex gap-4 relative">
             
-            {/* Column 1: Girl Image + Audio Player */}
-            <div className="w-1/2 flex flex-col gap-4">
-                {/* Image Container */}
-                <div className="relative w-full aspect-[3/4] bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+            {/* Column 1: Girl Image + Compact Audio Player */}
+            <div className="w-1/2 flex flex-col gap-3">
+                <div className="relative w-full aspect-[3/4] bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                       <Image 
                         src="/images/girl-reading.webp" 
                         alt="Student Reading" 
@@ -51,40 +45,45 @@ const WhatWeDeliver = () => {
                       />
                 </div>
 
-                {/* Audio Player UI (Static) */}
-                <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg border border-gray-100 flex items-center gap-2 md:gap-3 text-gray-500">
+                {/* PRO AUDIO PLAYER UI */}
+                {/* Visual Style: Compact, rounded, clean shadows */}
+                <div className="bg-white rounded-lg p-2.5 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-2 text-gray-600">
                     
-                    {/* Play Button - Fixed Accessibility */}
+                    {/* Play Button */}
                     <button 
                       aria-label="Play Audio"
-                      className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-800 hover:bg-gray-200 transition"
+                      className="w-8 h-8 flex items-center justify-center bg-[#4a56a2] text-white rounded-full hover:bg-blue-800 transition flex-shrink-0 shadow-md"
                     >
-                        <FaPlay className="text-[10px] md:text-xs ml-0.5" />
+                        <FaPlay className="text-[10px] ml-0.5" />
                     </button>
                     
-                    <span className="text-[9px] md:text-[10px] font-medium tracking-wide whitespace-nowrap">
-                      0:00 / 1:26
-                    </span>
-                    
-                    <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
-                        <div className="w-1/3 h-full bg-gray-400"></div>
+                    {/* Progress Area */}
+                    <div className="flex-1 flex flex-col justify-center gap-1">
+                        <div className="flex justify-between items-center text-[9px] font-bold text-gray-400 tracking-wide uppercase">
+                            <span>Video</span>
+                            <span>1:26</span>
+                        </div>
+                        {/* Thin elegant progress bar */}
+                        <div className="w-full h-1 bg-gray-100 rounded-full overflow-hidden">
+                             <div className="w-1/3 h-full bg-[#4a56a2]"></div>
+                        </div>
                     </div>
                     
-                    {/* Volume Button - Fixed Accessibility */}
-                    <button aria-label="Mute Volume" className="focus:outline-none">
-                      <FaVolumeUp className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
-                    </button>
-                    
-                    {/* Options Button - Fixed Accessibility */}
-                    <button aria-label="More Options" className="focus:outline-none">
-                      <FaEllipsisV className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
-                    </button>
+                    {/* Actions Group */}
+                    <div className="flex items-center gap-1 border-l border-gray-100 pl-2">
+                        <button aria-label="Mute" className="p-1.5 hover:bg-gray-50 rounded-md transition text-gray-400 hover:text-[#4a56a2]">
+                             <FaVolumeUp size={12} />
+                        </button>
+                        <button aria-label="Options" className="p-1.5 hover:bg-gray-50 rounded-md transition text-gray-400 hover:text-[#4a56a2]">
+                             <FaEllipsisH size={12} />
+                        </button>
+                    </div>
                 </div>
             </div>
 
             {/* Column 2: Group Image */}
-            <div className="w-1/2 mt-16 lg:mt-32"> 
-                 <div className="relative w-full aspect-square bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+            <div className="w-1/2 mt-12 lg:mt-24"> 
+                 <div className="relative w-full aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                     <Image 
                       src="/images/group-circle.webp" 
                       alt="Group Circle" 
