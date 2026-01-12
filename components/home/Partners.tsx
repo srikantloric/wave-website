@@ -4,15 +4,21 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Partners = () => {
   const partners = [
-    { name: 'McGraw Hill', src: '/images/partners/mcgraw.png', color: 'bg-red-600', textColor: 'text-white' },
-    { name: 'Pearson', src: '/images/partners/pearson.png', color: 'bg-[#008cba]', textColor: 'text-white' },
-    // Ensure text is black for maximum contrast on light gray
-    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-black' },
-    { name: 'Ministry', src: '/images/partners/ministry.png', color: 'bg-[#009879]', textColor: 'text-white' },
+    // Red background works fine with white text (Contrast ~5.7:1)
+    { name: 'McGraw Hill', src: '/images/partners/mcgraw.png', color: 'bg-red-700', textColor: 'text-white' },
+    
+    // FIX: Darkened Blue from #008cba to #006080 to pass contrast check with white text
+    { name: 'Pearson', src: '/images/partners/pearson.png', color: 'bg-[#006080]', textColor: 'text-white' },
+    
+    // Grey background with Black text (Already fixed previously)
+    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-gray-900' },
+    
+    // FIX: Darkened Teal from #009879 to #006d5b to pass contrast check with white text
+    { name: 'Ministry', src: '/images/partners/ministry.png', color: 'bg-[#006d5b]', textColor: 'text-white' },
   ];
 
   return (
-    <div className="bg-white py-16 mb-6">
+    <div className="bg-white py-16 mb-4">
       
       <div className="container mx-auto px-6 lg:px-20">
         
@@ -24,7 +30,6 @@ const Partners = () => {
             {/* Previous Button */}
             <button 
               aria-label="Previous partner"
-              // CONTRAST FIX: Changed text-gray-600 to text-gray-800 (Very Dark Grey)
               className="w-10 h-10 rounded-full bg-white shadow-lg text-gray-800 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0 cursor-default border border-gray-100"
             >
               <FaChevronLeft className="text-sm" />
@@ -58,7 +63,6 @@ const Partners = () => {
               We work with the <br /> Best Partners
             </h2>
             
-            {/* CONTRAST FIX: Ensure text is dark enough (gray-600) */}
             <div className="space-y-4 text-gray-600 text-sm leading-relaxed max-w-lg mx-auto md:mx-0 font-medium">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
