@@ -36,12 +36,12 @@ const Hero = () => {
         </p>
 
         {/* 3. Admission Button (Fixed & Uncommented) */}
-        <Link 
+        {/* <Link 
           href="/admission"
           className="bg-white text-[#4a56a2] font-bold text-base md:text-lg py-3 px-8 rounded-full shadow-xl hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
         >
             Apply for Admission
-        </Link> 
+        </Link>  */}
 
       </div>
     </div>
