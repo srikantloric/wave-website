@@ -92,7 +92,7 @@ export default function MessageCarousel({ profiles }: { profiles: Profile[] }) {
                 {/* ================= TEXT SECTION ================= */}
                 <div className="w-full lg:w-1/2 text-center lg:text-left relative">
                     
-                    {/* DOODLE 3: Giant Quote Icon (Restored) */}
+                    {/* DOODLE 3: Giant Quote Icon */}
                     <div className="absolute -top-8 left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0 opacity-10">
                         <svg width="60" height="60" viewBox="0 0 24 24" fill="#1A0B2E">
                         <path d="M14.017 21L14.017 18C14.017 16.896 14.321 15.923 14.932 15.084C15.54 14.246 16.486 13.593 17.766 13.129L17.766 11.458C16.963 11.64 16.31 11.967 15.807 12.443C15.304 12.918 15.053 13.568 15.053 14.392L15.053 14.654L17.808 14.654L17.808 21L14.017 21ZM5.21 21L5.21 18C5.21 16.896 5.513 15.923 6.126 15.084C6.737 14.246 7.681 13.593 8.959 13.129L8.959 11.458C8.156 11.64 7.502 11.967 6.999 12.443C6.496 12.918 6.244 13.568 6.244 14.392L6.244 14.654L8.998 14.654L8.998 21L5.21 21Z" />
@@ -116,6 +116,8 @@ export default function MessageCarousel({ profiles }: { profiles: Profile[] }) {
                 <button 
                     key={index}
                     onClick={() => setCurrentIndex(index)}
+
+                    aria-label={`Go to slide ${index + 1}`}
                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#6C5CE7] w-8' : 'bg-gray-300 hover:bg-[#6C5CE7]'}`}
                 />
             ))}

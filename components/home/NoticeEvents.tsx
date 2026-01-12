@@ -26,9 +26,6 @@ const NoticeEvents = () => {
   return (
     <div className="bg-white py-2 mb-10">
       
-      {/* CSS for Custom Vertical Marquee Animation 
-          (Ideally, move this to your globals.css, but it works here too) 
-      */}
       <style>{`
         @keyframes marqueeVertical {
           0% { transform: translateY(0); }
@@ -51,10 +48,10 @@ const NoticeEvents = () => {
             <div className="flex justify-between items-end mb-6 border-b border-gray-100 pb-2 relative">
               <div>
                   <h3 className="font-bold text-xl text-gray-900">Notice Board</h3>
-                  {/* Blue Underline Indicator */}
                   <div className="absolute bottom-0 left-0 w-8 h-1 bg-[#4a56a2] rounded-full"></div>
               </div>
-              <Link href="/notices" className="text-xs text-gray-400 cursor-pointer hover:text-[#4a56a2]">
+
+              <Link href="/notices" className="text-xs text-gray-500 font-semibold cursor-pointer hover:text-[#4a56a2]">
                 See all &gt;
               </Link>
             </div>
@@ -63,15 +60,16 @@ const NoticeEvents = () => {
             <div className="h-64 overflow-hidden relative">
                <div className="animate-marquee-vertical space-y-6">
                   {notices.map((notice, index) => (
-                    <div key={index} className="border-b border-gray-100 pb-4">
-                      <div className="text-xs text-yellow-500 font-medium mb-1">{notice.date}</div>
+                    <div key={`notice-${index}`} className="border-b border-gray-100 pb-4">
+                      {/* Fix: Darkened Yellow for readability on white */}
+                      <div className="text-xs text-yellow-600 font-bold mb-1">{notice.date}</div>
                       <Link href={`/notices/${index}`} className="text-sm font-semibold text-gray-800 leading-snug hover:text-[#4a56a2] cursor-pointer block">
                           {notice.title}
                       </Link>
                     </div>
                   ))}
                </div>
-               {/* Fade overlay at bottom for smooth exit */}
+               {/* Fade overlay restored for smooth UI */}
                {/* <div className="absolute bottom-0 left-0 w-full h-10 pointer-events-none bg-gradient-to-t from-white to-transparent"></div> */}
             </div>
           </div>
@@ -83,7 +81,8 @@ const NoticeEvents = () => {
                   <h3 className="font-bold text-xl text-gray-900">Upcoming Events</h3>
                   <div className="absolute bottom-0 left-0 w-8 h-1 bg-[#4a56a2] rounded-full"></div>
               </div>
-              <Link href="/events" className="text-xs text-gray-400 cursor-pointer hover:text-[#4a56a2]">
+              {/* Fix: Darkened text for better contrast */}
+              <Link href="/events" className="text-xs text-gray-500 font-semibold cursor-pointer hover:text-[#4a56a2]">
                 See all &gt;
               </Link>
             </div>
@@ -91,10 +90,9 @@ const NoticeEvents = () => {
             <div className="h-64 overflow-hidden relative">
               <div className="animate-marquee-vertical space-y-6">
                   {events.map((event, index) => (
-                    <div key={index} className="flex gap-4 group">
-                        {/* Date Badge */}
-                        <div className={`${event.color} ${event.color === 'bg-gray-300' ? 'text-gray-600' : 'text-white'} rounded-md text-center w-14 h-14 flex flex-col justify-center flex-shrink-0 shadow-sm`}>
-                          <span className="text-[10px] font-medium uppercase">{event.month}</span>
+                    <div key={`event-${index}`} className="flex gap-4 group">
+                        <div className={`${event.color} ${event.color === 'bg-[#1e3a8a]' ? 'text-white' : 'text-gray-800'} rounded-md text-center w-14 h-14 flex flex-col justify-center flex-shrink-0 shadow-sm`}>
+                          <span className="text-[10px] font-bold uppercase opacity-80">{event.month}</span>
                           <span className="font-bold text-2xl leading-none">{event.day}</span>
                         </div>
                         {/* Content */}
@@ -102,7 +100,8 @@ const NoticeEvents = () => {
                           <Link href={`/events/${index}`} className="text-sm font-bold text-gray-800 leading-tight hover:text-[#4a56a2] cursor-pointer mb-1 block">
                               {event.title}
                           </Link>
-                          <div className="text-xs text-gray-400 leading-relaxed line-clamp-2">
+                          {/* Fix: Darkened gray text */}
+                          <div className="text-xs text-gray-500 leading-relaxed line-clamp-2">
                               {event.desc}
                           </div>
                         </div>
@@ -113,7 +112,7 @@ const NoticeEvents = () => {
             </div>
           </div>
 
-          {/* Col 3: Rand Challenges (Video) */}
+          {/* Col 3: Wave Challenges (Video) */}
           <div>
              <div className="mb-6 border-b border-gray-100 pb-2 relative">
                  <h3 className="font-bold text-xl text-gray-900">Wave Challenges</h3>
@@ -128,14 +127,19 @@ const NoticeEvents = () => {
                       alt="Challenge Video" 
                       fill
                       className="object-cover opacity-90 transition duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                 </div>
                 
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                   <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition duration-300">
+                   {/* Fix: Added aria-label for accessibility */}
+                   <button 
+                     aria-label="Play Video"
+                     className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition duration-300"
+                   >
                       <FaPlay className="text-[#dc2626] ml-1 text-xl" />
-                   </div>
+                   </button>
                 </div>
              </div>
           </div>

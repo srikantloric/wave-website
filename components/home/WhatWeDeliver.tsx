@@ -5,13 +5,13 @@ import { FaPlay, FaVolumeUp, FaEllipsisV } from 'react-icons/fa';
 
 const WhatWeDeliver = () => {
   return (
-    // 1. OUTER WRAPPER: Full width (w-full) with White Background (bg-white)
+    // 1. OUTER WRAPPER
     <section className="w-full bg-white py-12 lg:py-20">
       
-      {/* 2. INNER CONTAINER: Constrains the content to the center */}
+      {/* 2. INNER CONTAINER */}
       <div className="container mx-auto px-6 lg:px-20">
         
-        {/* 3. LAYOUT GRID: Keeps the content layout tight (max-w-6xl) */}
+        {/* 3. LAYOUT GRID */}
         <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16 max-w-6xl mx-auto">
           
           {/* Left Text Content */}
@@ -27,10 +27,11 @@ const WhatWeDeliver = () => {
               needed to live, learn and work in a rapidly globalizing world.
             </p>
             
-            <Link href="/contact">
-              <button className="bg-[#4a56a2] text-white px-8 py-3 md:px-10 md:py-3 rounded-full hover:bg-blue-800 transition shadow-md font-medium text-sm xl:text-base">
+            <Link 
+              href="/contact"
+              className="inline-block bg-[#4a56a2] text-white px-8 py-3 md:px-10 md:py-3 rounded-full hover:bg-blue-800 transition shadow-md font-medium text-sm xl:text-base"
+            >
                 Contact Us
-              </button>
             </Link>
           </div>
 
@@ -52,15 +53,32 @@ const WhatWeDeliver = () => {
 
                 {/* Audio Player UI (Static) */}
                 <div className="bg-white rounded-xl p-2 md:p-3 shadow-lg border border-gray-100 flex items-center gap-2 md:gap-3 text-gray-500">
-                    <button className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-800 hover:bg-gray-200 transition">
+                    
+                    {/* Play Button - Fixed Accessibility */}
+                    <button 
+                      aria-label="Play Audio"
+                      className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-800 hover:bg-gray-200 transition"
+                    >
                         <FaPlay className="text-[10px] md:text-xs ml-0.5" />
                     </button>
-                    <span className="text-[9px] md:text-[10px] font-medium tracking-wide whitespace-nowrap">0:00 / 1:26</span>
+                    
+                    <span className="text-[9px] md:text-[10px] font-medium tracking-wide whitespace-nowrap">
+                      0:00 / 1:26
+                    </span>
+                    
                     <div className="flex-1 h-1 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
                         <div className="w-1/3 h-full bg-gray-400"></div>
                     </div>
-                    <FaVolumeUp className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
-                    <FaEllipsisV className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
+                    
+                    {/* Volume Button - Fixed Accessibility */}
+                    <button aria-label="Mute Volume" className="focus:outline-none">
+                      <FaVolumeUp className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
+                    </button>
+                    
+                    {/* Options Button - Fixed Accessibility */}
+                    <button aria-label="More Options" className="focus:outline-none">
+                      <FaEllipsisV className="text-gray-400 text-[10px] md:text-xs cursor-pointer hover:text-gray-600" />
+                    </button>
                 </div>
             </div>
 
