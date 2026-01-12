@@ -50,7 +50,7 @@ export default function Navbar() {
              {/* Logo Image */}
              <div className="relative h-12 w-12 md:h-16 md:w-16">
                <Image 
-                 src="/images/logo.png" 
+                 src="/images/logo.svg" 
                  alt="Wave International" 
                  fill 
                  className="object-contain" 

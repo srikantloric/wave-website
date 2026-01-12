@@ -44,7 +44,7 @@ const WhatWeDeliver = () => {
                         className="object-cover hover:scale-105 transition duration-500"
                         // PERFORMANCE FIX: 45vw on mobile (since it's w-1/2), 25vw on desktop
                         sizes="(max-width: 768px) 45vw, 25vw"
-                        quality={80}
+                        quality={70}
                       />
                 </div>
 
@@ -94,7 +94,7 @@ const WhatWeDeliver = () => {
                       className="object-cover hover:scale-105 transition duration-500"
                       // PERFORMANCE FIX: 45vw on mobile, 25vw on desktop
                       sizes="(max-width: 768px) 45vw, 25vw"
-                      quality={80}
+                      quality={70}
                     />
                  </div>
             </div>

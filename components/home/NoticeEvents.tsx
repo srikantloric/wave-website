@@ -46,8 +46,8 @@ const NoticeEvents = () => {
                   <h3 className="font-bold text-xl text-gray-900">Notice Board</h3>
                   <div className="absolute bottom-0 left-0 w-8 h-1 bg-[#4a56a2] rounded-full"></div>
               </div>
-              {/* CONTRAST FIX: text-gray-600 */}
-              <Link href="/notices" className="text-xs text-gray-600 font-semibold cursor-pointer hover:text-[#4a56a2]">
+              {/* CONTRAST FIX: text-gray-700 (was 600) */}
+              <Link href="/notices" className="text-xs text-gray-700 font-semibold cursor-pointer hover:text-[#4a56a2]">
                 See all &gt;
               </Link>
             </div>
@@ -56,7 +56,7 @@ const NoticeEvents = () => {
                <div className="animate-marquee-vertical space-y-6">
                   {notices.map((notice, index) => (
                     <div key={`notice-${index}`} className="border-b border-gray-100 pb-4">
-                      {/* CONTRAST FIX: text-yellow-700 (500 and 600 fail on white) */}
+                      {/* Date Contrast is fine (yellow-700) */}
                       <div className="text-xs text-yellow-700 font-bold mb-1">{notice.date}</div>
                       <Link href={`/notices/${index}`} className="text-sm font-semibold text-gray-800 leading-snug hover:text-[#4a56a2] cursor-pointer block">
                           {notice.title}
@@ -64,7 +64,6 @@ const NoticeEvents = () => {
                     </div>
                   ))}
                </div>
-               {/* <div className="absolute bottom-0 left-0 w-full h-10 pointer-events-none bg-gradient-to-t from-white to-transparent"></div> */}
             </div>
           </div>
 
@@ -75,8 +74,8 @@ const NoticeEvents = () => {
                   <h3 className="font-bold text-xl text-gray-900">Upcoming Events</h3>
                   <div className="absolute bottom-0 left-0 w-8 h-1 bg-[#4a56a2] rounded-full"></div>
               </div>
-              {/* CONTRAST FIX: text-gray-600 */}
-              <Link href="/events" className="text-xs text-gray-600 font-semibold cursor-pointer hover:text-[#4a56a2]">
+              {/* CONTRAST FIX: text-gray-700 */}
+              <Link href="/events" className="text-xs text-gray-700 font-semibold cursor-pointer hover:text-[#4a56a2]">
                 See all &gt;
               </Link>
             </div>
@@ -85,7 +84,6 @@ const NoticeEvents = () => {
               <div className="animate-marquee-vertical space-y-6">
                   {events.map((event, index) => (
                     <div key={`event-${index}`} className="flex gap-4 group">
-                        {/* Contrast logic for badges */}
                         <div className={`${event.color} ${event.color === 'bg-[#1e3a8a]' ? 'text-white' : 'text-gray-900'} rounded-md text-center w-14 h-14 flex flex-col justify-center flex-shrink-0 shadow-sm`}>
                           <span className="text-[10px] font-bold uppercase opacity-80">{event.month}</span>
                           <span className="font-bold text-2xl leading-none">{event.day}</span>
@@ -94,38 +92,40 @@ const NoticeEvents = () => {
                           <Link href={`/events/${index}`} className="text-sm font-bold text-gray-800 leading-tight hover:text-[#4a56a2] cursor-pointer mb-1 block">
                               {event.title}
                           </Link>
-                          {/* CONTRAST FIX: text-gray-600 */}
-                          <div className="text-xs text-gray-600 leading-relaxed line-clamp-2">
+                          {/* CONTRAST FIX: text-gray-700 (was 600) */}
+                          <div className="text-xs text-gray-700 leading-relaxed line-clamp-2">
                               {event.desc}
                           </div>
                         </div>
                     </div>
                   ))}
               </div>
-              {/* <div className="absolute bottom-0 left-0 w-full h-10 pointer-events-none bg-gradient-to-t from-white to-transparent"></div> */}
             </div>
           </div>
 
-          {/* Col 3: Wave Challenges */}
+          {/* Col 3: Wave Challenges (IMAGE FIX HERE) */}
           <div>
              <div className="mb-6 border-b border-gray-100 pb-2 relative">
                  <h3 className="font-bold text-xl text-gray-900">Wave Challenges</h3>
                  <div className="absolute bottom-0 left-0 w-8 h-1 bg-[#4a56a2] rounded-full"></div>
              </div>
              
-             <div className="w-full aspect-video rounded-xl overflow-hidden relative group cursor-pointer shadow-lg">
-                <div className="absolute inset-0 bg-blue-400">
+             <div className="w-full aspect-video rounded-xl overflow-hidden relative group cursor-pointer shadow-lg bg-blue-100">
+                <div className="absolute inset-0">
                     <Image 
                       src="/images/challenges-video-thumbnail.webp" 
                       alt="Challenge Video" 
                       fill
                       className="object-cover opacity-90 transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      // FIX: Match the 'lg' grid breakpoint (1024px)
+                      // - Below 1024px: Image is full width of container (approx 90vw)
+                      // - Above 1024px: Image is 1/3 width (approx 33vw)
+                      sizes="(max-width: 1024px) 90vw, 33vw"
+                      quality={75}
                     />
                 </div>
                 
                 <div className="absolute inset-0 flex items-center justify-center">
-                   {/* BUTTON FIX: Added aria-label */}
                    <button 
                      aria-label="Play Challenge Video"
                      className="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition duration-300"
