@@ -6,7 +6,8 @@ const Partners = () => {
   const partners = [
     { name: 'McGraw Hill', src: '/images/partners/mcgraw.png', color: 'bg-red-600', textColor: 'text-white' },
     { name: 'Pearson', src: '/images/partners/pearson.png', color: 'bg-[#008cba]', textColor: 'text-white' },
-    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-gray-900' }, // Dark text for light bg
+    // Contrast Fix: Dark text on light background
+    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-gray-900' },
     { name: 'Ministry', src: '/images/partners/ministry.png', color: 'bg-[#009879]', textColor: 'text-white' },
   ];
 
@@ -22,9 +23,11 @@ const Partners = () => {
           {/* Left: Logos Grid + Navigation */}
           <div className="w-full md:w-1/2 flex items-center justify-center gap-4">
             
+            {/* Previous Button */}
             <button 
               aria-label="Previous partner"
-              className="w-10 h-10 rounded-full bg-white shadow-lg text-gray-400 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0 cursor-default"
+              // Contrast Fix: Changed text-gray-400 to text-gray-600 (400 is too light on white)
+              className="w-10 h-10 rounded-full bg-white shadow-lg text-gray-600 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0 cursor-default"
             >
               <FaChevronLeft className="text-sm" />
             </button>
@@ -34,19 +37,16 @@ const Partners = () => {
                {partners.map((partner) => (
                  <div key={partner.name} className="relative aspect-square bg-white border border-gray-100 shadow-sm rounded-lg flex items-center justify-center p-4 overflow-hidden">
                     
-                    {/* 1. The Optimized Image 
-                       (Uncomment when images are ready in public/images/partners/)
-                    */}
+                    {/* 1. The Optimized Image (Uncomment when ready) */}
                     {/* <Image 
                       src={partner.src} 
                       alt={partner.name} 
                       fill 
                       className="object-contain p-4" 
                       sizes="(max-width: 768px) 150px, 200px"
-                    /> 
-                    */}
+                    /> */}
 
-                    {/* 2. The Placeholder (With fixed contrast) */}
+                    {/* 2. The Placeholder */}
                     <div className={`w-full h-full ${partner.color} ${partner.textColor} text-[10px] flex items-center justify-center font-bold text-center`}>
                       {partner.name}
                     </div>
@@ -54,7 +54,7 @@ const Partners = () => {
                ))}
             </div>
 
-            {/* Next Button - Added aria-label for Accessibility */}
+            {/* Next Button */}
             <button 
               aria-label="Next partner"
               className="w-10 h-10 rounded-full bg-[#4a56a2] shadow-lg text-white flex items-center justify-center hover:bg-blue-800 transition flex-shrink-0 cursor-default"
@@ -69,7 +69,8 @@ const Partners = () => {
               We work with the <br /> Best Partners
             </h2>
             
-            <div className="space-y-4 text-gray-500 text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
+            {/* Contrast Fix: Changed text-gray-500 to text-gray-600 for better readability */}
+            <div className="space-y-4 text-gray-600 text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
