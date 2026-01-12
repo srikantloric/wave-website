@@ -12,10 +12,11 @@ const Hero = () => {
           src="/images/hero.webp" 
           alt="School Campus"
           fill
-          priority={true} 
-          quality={80}    
+          priority={true} // Preloads the image
+          fetchPriority="high" // PERFORMANCE FIX: Prioritizes bandwidth for this image
+          quality={75} // PERFORMANCE FIX: Reduced slightly to satisfy Lighthouse size audit
           className="object-cover"
-          sizes="100vw"
+          sizes="100vw" // Tells browser it's always full width
         />
       </div>
       
@@ -34,17 +35,13 @@ const Hero = () => {
           The greatest place for your child to longlife learning
         </p>
 
-        {/* 3. Admission Button (Optimized structure) 
-            Note: Nesting <button> inside <Link> is invalid in modern HTML. 
-            Apply styles directly to the Link.
-        */}
-        {/* <Link 
+        {/* 3. Admission Button (Fixed & Uncommented) */}
+        <Link 
           href="/admission"
           className="bg-white text-[#4a56a2] font-bold text-base md:text-lg py-3 px-8 rounded-full shadow-xl hover:bg-gray-100 hover:-translate-y-1 transition-all duration-300"
         >
             Apply for Admission
         </Link> 
-        */}
 
       </div>
     </div>

@@ -42,15 +42,13 @@ const WhatWeDeliver = () => {
                         alt="Student Reading" 
                         fill
                         className="object-cover hover:scale-105 transition duration-500"
-                        sizes="(max-width: 768px) 50vw, 25vw"
+                        // PERFORMANCE FIX: 45vw on mobile (since it's w-1/2), 25vw on desktop
+                        sizes="(max-width: 768px) 45vw, 25vw"
+                        quality={80}
                       />
                 </div>
 
-                {/* AUDIO PLAYER UI (Responsive Scaling) */}
-                {/* Logic: 
-                    - Default (Mobile/Tablet): Smaller padding (p-2), smaller buttons (w-8), smaller text.
-                    - XL Screens (Desktop): Larger padding (p-3), larger buttons (w-10).
-                */}
+                {/* AUDIO PLAYER UI */}
                 <div className="bg-white rounded-lg p-2 xl:p-3 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)] border border-gray-100 flex items-center gap-2 xl:gap-3">
                     
                     {/* Play Button */}
@@ -58,13 +56,13 @@ const WhatWeDeliver = () => {
                       aria-label="Play Audio Lesson"
                       className="w-8 h-8 xl:w-10 xl:h-10 flex items-center justify-center bg-[#4a56a2] text-white rounded-full hover:bg-blue-800 transition flex-shrink-0 shadow-md"
                     >
-                        {/* Icon size scales with screen */}
                         <FaPlay className="text-[10px] xl:text-xs ml-0.5" />
                     </button>
                     
                     {/* Progress Area */}
                     <div className="flex-1 flex flex-col justify-center gap-0.5 xl:gap-1 min-w-0">
-                        <div className="flex justify-between items-center text-[8px] xl:text-[10px] font-bold text-gray-600 tracking-wide uppercase gap-1">
+                        {/* CONTRAST FIX: text-gray-700 is darker than 600 for better readability */}
+                        <div className="flex justify-between items-center text-[8px] xl:text-[10px] font-bold text-gray-700 tracking-wide uppercase gap-1">
                             <span className="truncate">Video</span>
                             <span className="whitespace-nowrap">1:26</span>
                         </div>
@@ -94,7 +92,9 @@ const WhatWeDeliver = () => {
                       alt="Group Circle" 
                       fill
                       className="object-cover hover:scale-105 transition duration-500"
-                      sizes="(max-width: 768px) 50vw, 25vw"
+                      // PERFORMANCE FIX: 45vw on mobile, 25vw on desktop
+                      sizes="(max-width: 768px) 45vw, 25vw"
+                      quality={80}
                     />
                  </div>
             </div>
