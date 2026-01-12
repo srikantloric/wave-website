@@ -1,6 +1,6 @@
 // NO "use client" here. This is a Server Component.
 import React from 'react';
-import MessageCarousel from './MessageCarousel'; // Import the client part
+import MessageCarousel from './MessageCarousel'; 
 
 export default function PrincipalMessages() {
 

@@ -2,16 +2,41 @@ import React from 'react';
 import { FaGraduationCap, FaChalkboardTeacher, FaSchool, FaUserGraduate } from 'react-icons/fa';
 
 const Stats = () => {
+  // Data array for cleaner JSX
+  const stats = [
+    { 
+      id: 1, 
+      icon: FaGraduationCap, 
+      count: "4066", 
+      label: "Graduation" 
+    },
+    { 
+      id: 2, 
+      icon: FaChalkboardTeacher, 
+      count: "154+", 
+      label: "Teacher" 
+    },
+    { 
+      id: 3, 
+      icon: FaSchool, 
+      count: "71+", 
+      label: "Classrooms" 
+    },
+    { 
+      id: 4, 
+      icon: FaUserGraduate, 
+      count: "1453+", 
+      label: "Students" 
+    },
+  ];
+
   return (
     <div className="w-full bg-[#4a56a2] text-white py-10 md:py-14">
       
-      {/* 1. CONTAINER: Handles padding */}
+      {/* 1. CONTAINER */}
       <div className="container mx-auto px-6 lg:px-20">
         
-        {/* 2. INNER CONSTRAINT: Added 'max-w-6xl mx-auto'
-            This stops the content from expanding beyond approx 1150px,
-            keeping it aligned with WhatWeDeliver and Partners sections.
-        */}
+        {/* 2. INNER CONSTRAINT */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           
           {/* Left Text Content */}
@@ -20,7 +45,8 @@ const Stats = () => {
               We Revolutionised Kids <br className="hidden md:block"/> Education System
             </h2>
             
-            <div className="space-y-3 text-blue-50 text-xs md:text-sm font-light leading-relaxed opacity-90 max-w-2xl mx-auto lg:mx-0">
+            {/* CONTRAST FIX: Changed 'text-blue-50 opacity-90' to 'text-blue-100' for better readability */}
+            <div className="space-y-3 text-blue-100 text-xs md:text-sm font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -43,33 +69,26 @@ const Stats = () => {
           {/* Right Stats Grid */}
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4">
             
-            {/* Stat Card 1 */}
-            <div className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300">
-               <FaGraduationCap className="text-2xl md:text-3xl mb-1 opacity-90" />
-               <span className="text-2xl md:text-3xl font-bold">4066</span>
-               <span className="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Graduation</span>
-            </div>
-
-            {/* Stat Card 2 */}
-            <div className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300">
-               <FaChalkboardTeacher className="text-2xl md:text-3xl mb-1 opacity-90" />
-               <span className="text-2xl md:text-3xl font-bold">154+</span>
-               <span className="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Teacher</span>
-            </div>
-
-            {/* Stat Card 3 */}
-            <div className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300">
-               <FaSchool className="text-2xl md:text-3xl mb-1 opacity-90" />
-               <span className="text-2xl md:text-3xl font-bold">71+</span>
-               <span className="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Classrooms</span>
-            </div>
-
-            {/* Stat Card 4 */}
-            <div className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300">
-               <FaUserGraduate className="text-2xl md:text-3xl mb-1 opacity-90" />
-               <span className="text-2xl md:text-3xl font-bold">1453+</span>
-               <span className="text-[10px] md:text-xs uppercase tracking-widest opacity-70">Students</span>
-            </div>
+            {stats.map((stat) => (
+              <div 
+                key={stat.id} 
+                className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/5"
+              >
+                 {/* ACCESSIBILITY FIX: Added aria-hidden="true" */}
+                 <stat.icon className="text-2xl md:text-3xl mb-1 text-white" aria-hidden="true" />
+                 
+                 <span className="text-2xl md:text-3xl font-bold text-white">
+                    {stat.count}
+                 </span>
+                 
+                 {/* CONTRAST FIX: Changed 'opacity-70' to 'text-blue-200'. 
+                     This makes the text distinct but fully opaque and readable. 
+                 */}
+                 <span className="text-[10px] md:text-xs uppercase tracking-widest text-blue-200 font-bold">
+                    {stat.label}
+                 </span>
+              </div>
+            ))}
 
           </div>
 
