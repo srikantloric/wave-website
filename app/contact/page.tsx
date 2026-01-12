@@ -1,8 +1,10 @@
+// app/contact/page.tsx
 import React from 'react';
 import type { Metadata } from 'next';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import ContactForm from './ContactForm'; 
 
-// 1. SEO Metadata
+// 1. SEO Metadata (Works only in Server Components)
 export const metadata: Metadata = {
   title: 'Contact Us | Wave International School',
   description: 'Get in touch with Wave International School. We are here to answer your questions about admissions, academics, and more.',
@@ -41,10 +43,10 @@ export default function ContactPage() {
                 and we will get back to you as soon as possible.
               </p>
 
-              {/* GRID LOGIC */}
-              <div className="grid grid-cols-2 gap-x-3 gap-y-6 min-[500px]:grid-cols-3 min-[500px]:gap-4 lg:block lg:space-y-8">
+              {/* INFO BLOCKS */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:block lg:space-y-8 gap-6">
                 
-                {/* Info Block 1: Address */}
+                {/* Address */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
                     <FaMapMarkerAlt className="text-lg lg:text-xl" />
@@ -59,7 +61,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                {/* Info Block 2: Phone */}
+                {/* Phone */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
                     <FaPhoneAlt className="text-lg lg:text-lg" />
@@ -67,19 +69,15 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-bold text-sm lg:text-lg text-gray-900 mb-1">Call Us</h3>
                     <div className="space-y-0.5 lg:space-y-1">
-                        <p className="text-gray-600 text-xs lg:text-sm font-medium">
-                        +91 99734 74757
-                        </p>
-                        <p className="text-gray-600 text-xs lg:text-sm font-medium">
-                        +91 83403 6812
-                        </p>
+                        <p className="text-gray-600 text-xs lg:text-sm font-medium">+91 99734 74757</p>
+                        <p className="text-gray-600 text-xs lg:text-sm font-medium">+91 83403 68128</p>
                     </div>
                     <p className="text-gray-400 text-[10px] lg:text-xs mt-1">Mon-Sat 8am-4pm</p>
                   </div>
                 </div>
 
-                {/* Info Block 3: Email */}
-                <div className=" min-[500px]:col-span-1 flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
+                {/* Email */}
+                <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
                   <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
                     <FaEnvelope className="text-lg lg:text-lg" />
                   </div>
@@ -94,64 +92,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Contact Form */}
-            <div className="bg-white p-6 md:p-10 rounded-2xl shadow-lg border border-gray-100">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
-              <form>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
-                  {/* Name Input */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name</label>
-                    <input 
-                      type="text" 
-                      name="name"
-                      placeholder="John Doe" 
-                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
-                    />
-                  </div>
-                  {/* Email Input */}
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address</label>
-                    <input 
-                      type="email" 
-                      name="email"
-                      placeholder="john@example.com" 
-                      className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
-                    />
-                  </div>
-                </div>
-
-                {/* Subject Input */}
-                <div className="mb-4 md:mb-6">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Subject</label>
-                  <input 
-                    type="text" 
-                    name="subject"
-                    placeholder="Admissions Inquiry" 
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition text-sm"
-                  />
-                </div>
-
-                {/* Message Input */}
-                <div className="mb-6 md:mb-8">
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
-                  <textarea 
-                    rows={4} 
-                    name="message"
-                    placeholder="How can we help you?" 
-                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition resize-none text-sm"
-                  ></textarea>
-                </div>
-
-                {/* Submit Button */}
-                <button 
-                  type="submit" 
-                  className="w-full bg-[#4a56a2] text-white font-bold py-3 md:py-4 rounded-lg hover:bg-blue-800 transition shadow-md text-sm md:text-base"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
+            {/* RIGHT COLUMN: Contact Form (Interactive Client Component) */}
+            <ContactForm />
 
           </div>
         </div>
@@ -159,17 +101,15 @@ export default function ContactPage() {
 
       {/* ================= SECTION 3: MAP ================= */}
       <section className="h-[300px] md:h-[400px] w-full bg-gray-200">
-        {/* Note: Ensure the SRC below is a valid Google Maps Embed URL. 
-            The placeholder from your snippet might not render correctly without a valid API key or Embed link. 
-        */}
         <iframe 
           title="School Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3633.2084254387246!2d86.29866517762609!3d24.408825663176337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f15f3d4f5f95c9%3A0x6b5600ffc7efc535!2sWave%20International%20School!5e0!3m2!1sen!2sin!4v1768151917065!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3635.44123456789!2d86.123456!3d24.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDA3JzM0LjIiTiA4NsKwMDcnMjQuNCJF!5e0!3m2!1sen!2sin!4v1234567890" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
           allowFullScreen={true} 
           loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </section>
 
