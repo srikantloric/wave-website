@@ -2,7 +2,6 @@ import React from 'react';
 import { FaGraduationCap, FaChalkboardTeacher, FaSchool, FaUserGraduate } from 'react-icons/fa';
 
 const Stats = () => {
-  // Data array for cleaner JSX
   const stats = [
     { 
       id: 1, 
@@ -33,10 +32,8 @@ const Stats = () => {
   return (
     <div className="w-full bg-[#4a56a2] text-white py-10 md:py-14">
       
-      {/* 1. CONTAINER */}
       <div className="container mx-auto px-6 lg:px-20">
         
-        {/* 2. INNER CONSTRAINT */}
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           
           {/* Left Text Content */}
@@ -45,8 +42,8 @@ const Stats = () => {
               We Revolutionised Kids <br className="hidden md:block"/> Education System
             </h2>
             
-            {/* CONTRAST FIX: Changed 'text-blue-50 opacity-90' to 'text-blue-100' for better readability */}
-            <div className="space-y-3 text-blue-100 text-xs md:text-sm font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            {/* CONTRAST FIX: Changed to 'text-gray-100' (almost pure white) for maximum readability */}
+            <div className="space-y-3 text-gray-100 text-xs md:text-sm font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
@@ -72,19 +69,16 @@ const Stats = () => {
             {stats.map((stat) => (
               <div 
                 key={stat.id} 
-                className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/5"
+                className="bg-white/10 p-5 rounded-lg flex flex-col items-center justify-center gap-2 backdrop-blur-sm hover:bg-white/20 transition duration-300 border border-white/10"
               >
-                 {/* ACCESSIBILITY FIX: Added aria-hidden="true" */}
-                 <stat.icon className="text-2xl md:text-3xl mb-1 text-white" aria-hidden="true" />
+                 {/* Icon is decorative, so we hide it from screen readers */}
+                 <stat.icon className="text-2xl md:text-3xl mb-1 text-white opacity-90" aria-hidden="true" />
                  
                  <span className="text-2xl md:text-3xl font-bold text-white">
                     {stat.count}
                  </span>
                  
-                 {/* CONTRAST FIX: Changed 'opacity-70' to 'text-blue-200'. 
-                     This makes the text distinct but fully opaque and readable. 
-                 */}
-                 <span className="text-[10px] md:text-xs uppercase tracking-widest text-blue-200 font-bold">
+                 <span className="text-[10px] md:text-xs uppercase tracking-widest text-white font-bold">
                     {stat.label}
                  </span>
               </div>

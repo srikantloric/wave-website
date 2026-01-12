@@ -6,18 +6,16 @@ const Partners = () => {
   const partners = [
     { name: 'McGraw Hill', src: '/images/partners/mcgraw.png', color: 'bg-red-600', textColor: 'text-white' },
     { name: 'Pearson', src: '/images/partners/pearson.png', color: 'bg-[#008cba]', textColor: 'text-white' },
-    // Contrast Fix: Dark text on light background
-    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-gray-900' },
+    // Ensure text is black for maximum contrast on light gray
+    { name: 'Cognia', src: '/images/partners/cognia.png', color: 'bg-gray-300', textColor: 'text-black' },
     { name: 'Ministry', src: '/images/partners/ministry.png', color: 'bg-[#009879]', textColor: 'text-white' },
   ];
 
   return (
-    <div className="bg-white py-16 mb-4">
+    <div className="bg-white py-16 mb-6">
       
-      {/* ALIGNMENT WRAPPER */}
       <div className="container mx-auto px-6 lg:px-20">
         
-        {/* INNER CONTENT CONSTRAINT */}
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 md:gap-20">
           
           {/* Left: Logos Grid + Navigation */}
@@ -26,8 +24,8 @@ const Partners = () => {
             {/* Previous Button */}
             <button 
               aria-label="Previous partner"
-              // Contrast Fix: Changed text-gray-400 to text-gray-600 (400 is too light on white)
-              className="w-10 h-10 rounded-full bg-white shadow-lg text-gray-600 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0 cursor-default"
+              // CONTRAST FIX: Changed text-gray-600 to text-gray-800 (Very Dark Grey)
+              className="w-10 h-10 rounded-full bg-white shadow-lg text-gray-800 flex items-center justify-center hover:bg-gray-50 transition flex-shrink-0 cursor-default border border-gray-100"
             >
               <FaChevronLeft className="text-sm" />
             </button>
@@ -37,16 +35,7 @@ const Partners = () => {
                {partners.map((partner) => (
                  <div key={partner.name} className="relative aspect-square bg-white border border-gray-100 shadow-sm rounded-lg flex items-center justify-center p-4 overflow-hidden">
                     
-                    {/* 1. The Optimized Image (Uncomment when ready) */}
-                    {/* <Image 
-                      src={partner.src} 
-                      alt={partner.name} 
-                      fill 
-                      className="object-contain p-4" 
-                      sizes="(max-width: 768px) 150px, 200px"
-                    /> */}
-
-                    {/* 2. The Placeholder */}
+                    {/* Placeholder Logic */}
                     <div className={`w-full h-full ${partner.color} ${partner.textColor} text-[10px] flex items-center justify-center font-bold text-center`}>
                       {partner.name}
                     </div>
@@ -69,8 +58,8 @@ const Partners = () => {
               We work with the <br /> Best Partners
             </h2>
             
-            {/* Contrast Fix: Changed text-gray-500 to text-gray-600 for better readability */}
-            <div className="space-y-4 text-gray-600 text-sm leading-relaxed max-w-lg mx-auto md:mx-0">
+            {/* CONTRAST FIX: Ensure text is dark enough (gray-600) */}
+            <div className="space-y-4 text-gray-600 text-sm leading-relaxed max-w-lg mx-auto md:mx-0 font-medium">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
