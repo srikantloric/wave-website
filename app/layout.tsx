@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Wave International",
+  title: "Wave International School",
   description: "School Website",
 };
 
