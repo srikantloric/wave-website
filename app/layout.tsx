@@ -1,9 +1,15 @@
-// app/layout.tsx
 import type { Metadata } from "next";
-// Import your global css here (where Tailwind is setup)
+// 1. Import the font optimizer
+import { Inter } from "next/font/google"; 
 import "./globals.css"; 
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter", 
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Wave International",
@@ -17,12 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen">
+      {/* 3. Add the font variable to the body class */}
+      <body className={`${inter.variable} font-sans antialiased text-gray-800 bg-gray-50 flex flex-col min-h-screen`}>
         <div className="sticky top-0 z-50">
           <Navbar />
         </div>
 
-        {/* This main tag renders the content of the specific page user is on */}
         <main className="flex-grow">
           {children}
         </main>
