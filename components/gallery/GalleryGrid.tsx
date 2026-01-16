@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 // --- DATA ---
 const galleryData = [
-  { id: 1, src: "", category: "Campus", title: "Main School Building", span: "" },
+  { id: 1, src: "", category: "Campuss", title: "Main School Building", span: "" },
   { id: 2, src: "", category: "Academics", title: "Science Lab Experiments", span: "row-span-2" }, 
   { id: 3, src: "", category: "Sports", title: "Inter-School Basketball", span: "" },
   { id: 4, src: "", category: "Events", title: "Annual Day Celebration", span: "row-span-2" }, 
