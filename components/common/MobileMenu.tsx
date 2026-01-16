@@ -42,7 +42,7 @@ export default function MobileMenu({ navItems }: { navItems: NavItem[] }) {
       <button
         onClick={() => setIsOpen(true)}
         aria-label="Open main menu" // <--- FIX: Accessible Name
-        className="text-[#4a56a2] p-2 focus:outline-none hover:bg-gray-100 rounded-md transition-colors"
+        className="text-primary p-2 focus:outline-none hover:bg-gray-100 rounded-md transition-colors"
       >
         <FaBars className="text-2xl" />
       </button>

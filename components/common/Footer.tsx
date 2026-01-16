@@ -5,19 +5,19 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="bg-[#1a1f2e] text-white py-16 text-sm">
-      
+
       <div className="container mx-auto px-6 lg:px-20">
-        
+
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-16">
-          
+
           {/* Column 1: Brand */}
           <div className="space-y-4">
             <h3 className="text-white font-bold text-lg md:text-xl uppercase leading-snug">
-              Wave International <br/> School
+              Wave International <br /> School
             </h3>
             <p className="text-gray-400 text-xs leading-relaxed max-w-xs">
-              Lorem ipsum od ohet dilogi. Bell trabel, samulgt, ohöbel utom diska. 
-              Jinesade bel när feras redorade i belogi. FAR paratyp i muvåning.
+              Nurturing curiosity, fostering excellence, and shaping the global leaders of
+              tomorrow through a holistic approach to education.
             </p>
           </div>
 
@@ -58,17 +58,17 @@ const Footer = () => {
             <h4 className="text-white font-bold mb-6 text-base">Contact</h4>
             <ul className="space-y-4 text-gray-400 text-xs">
               <li className="flex gap-3 items-center">
-                <FaPhoneAlt className="text-white text-xs" /> 
-                <span className="hover:text-white cursor-pointer">+966(13)8504477</span>
+                <FaPhoneAlt className="text-white text-xs" />
+                <span className="hover:text-white cursor-pointer">+91-7870232601</span>
               </li>
               <li className="flex gap-3 items-center">
                 <FaEnvelope className="text-white text-xs" />
-                <span className="hover:text-white cursor-pointer">info@randschools.edu.sa</span>
+                <span className="hover:text-white cursor-pointer">hello@waveinternationalschool.org</span>
               </li>
               <li className="flex gap-3 items-start">
                 <FaMapMarkerAlt className="text-white text-xs mt-0.5" />
                 <span className="hover:text-white cursor-pointer leading-relaxed">
-                  PO Box 9712, Dammam, 31423,<br/> Saudi Arabia
+                  Adarshnagar, Tatkari, Siyatan, Jamua, GIRIDIH,<br /> PIN - 815312
                 </span>
               </li>
             </ul>
