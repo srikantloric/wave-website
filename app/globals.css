@@ -1,5 +1,59 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* =========================
+     Fonts
+     ========================= */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  /* =========================
+     Brand Colors (Wave)
+     ========================= */
+  --color-brand-blue-900: #004895;
+  --color-brand-blue-700: #3280af;
+  --color-brand-blue-500: #83b9d1;
+
+  --color-brand-orange-700: #df440a;
+  --color-brand-orange-600: #e1460d;
+  --color-brand-orange-400: #eb8931;
+
+  --color-brand-yellow-500: #fedb61;
+
+  --color-brand-white: #ffffff;
+
+  /* =========================
+     Semantic UI Colors
+     ========================= */
+  --color-primary: var(--color-brand-blue-900);
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: var(--color-brand-orange-600);
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: var(--color-brand-yellow-500);
+  --color-accent-foreground: #1f2937;
+
+  --color-muted: #f3f4f6;
+  --color-muted-foreground: #6b7280;
+
+  --color-border: #e5e7eb;
+  --color-input: #e5e7eb;
+  --color-ring: var(--color-brand-blue-500);
+
+  /* =========================
+     Status Colors
+     ========================= */
+  --color-success: #16a34a;
+  --color-warning: #f59e0b;
+  --color-error: #dc2626;
+  --color-info: var(--color-brand-blue-500);
+
+  /* =========================
+     Radius
+     ========================= */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
 }

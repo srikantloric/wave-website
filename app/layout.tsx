@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 // 1. Import the font optimizer
-import { Inter } from "next/font/google"; 
-import "./globals.css"; 
+import { Inter } from "next/font/google";
+import "./globals.css";
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter", 
+  variable: "--font-inter",
   display: "swap",
 });
 

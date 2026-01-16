@@ -20,13 +20,13 @@ export default function Navbar() {
   return (
     <header className="w-full font-sans relative z-50">
       {/* --- TOP BAR --- */}
-      <div className="bg-[#4a56a2] text-white text-[11px] md:text-xs py-2 px-4 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-2">
+      <div className="bg-primary text-white text-[11px] md:text-xs py-2 px-4 lg:px-16 flex flex-col md:flex-row justify-between items-center gap-2">
         <div className="flex gap-6 items-center">
           <div className="flex items-center gap-2">
-            <FaPhoneAlt className="text-[10px]" /><span>+966(13)8504477</span>
+            <FaPhoneAlt className="text-[10px]" /><span>+91-7870232601</span>
           </div>
           <div className="flex items-center gap-2">
-            <FaEnvelope className="text-[10px]" /><span>info@waveschools.edu.sa</span>
+            <FaEnvelope className="text-[10px]" /><span>hello@waveinternationalschool.org</span>
           </div>
         </div>
         <div className="hidden md:flex flex-wrap justify-center gap-4 items-center">
@@ -47,45 +47,45 @@ export default function Navbar() {
 
           {/* 1. LOGO SECTION */}
           <Link href="/" className="flex items-center gap-1 md:gap-1 group">
-             {/* Logo Image */}
-             <div className="relative h-12 w-12 md:h-16 md:w-16">
-               <Image 
-                 src="/images/logo.svg" 
-                 alt="Wave International" 
-                 fill 
-                 className="object-contain" 
-                 sizes="(max-width: 768px) 48px, 64px"
-               />
-             </div>
+            {/* Logo Image */}
+            <div className="relative h-12 w-12 md:h-16 md:w-16">
+              <Image
+                src="/wave-logo.png"
+                alt="Wave International"
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 48px, 64px"
+              />
+            </div>
 
-             {/* Text Container */}
-             <div className="flex flex-col">
-               
-               {/* Upper Section: WAVE + Vertical Stack */}
-               <div className="flex items-center gap-2">
-                 <h1 className="text-3xl md:text-5xl font-black text-[#0f2557] tracking-tighter leading-none">WAVE</h1>
-                 <div className="flex flex-col mt-1.5 items-start justify-center leading-none">
-                   <span className="text-[10px] md:text-sm font-bold text-[#0f2557] tracking-wider block">INTERNATIONAL</span>
-                   <span className="text-[10px] md:text-sm font-bold text-[#0f2557] tracking-wider block pt-[2px]">SCHOOL</span>
-                 </div>
-               </div>
+            {/* Text Container */}
+            <div className="flex flex-col">
 
-               {/* --- START: YOUR TAGLINE CODE --- */}
-               <div className="flex items-center w-full mt-1">
-                 {/* Gradient Line Left */}
-                 <div className="h-[1px] bg-gradient-to-r from-transparent to-[#4a56a2] w-25 md:w-40"></div>
+              {/* Upper Section: WAVE + Vertical Stack */}
+              <div className="flex items-center gap-2">
+                <h1 className="text-3xl md:text-5xl font-black text-primary tracking-tighter leading-none">WAVE</h1>
+                <div className="flex flex-col mt-1.5 items-start justify-center leading-none">
+                  <span className="text-[10px] md:text-sm font-bold text-primary tracking-wider block">INTERNATIONAL</span>
+                  <span className="text-[10px] md:text-sm font-bold text-primary tracking-wider block pt-[2px]">SCHOOL</span>
+                </div>
+              </div>
 
-                 {/* Tagline Text */}
-                 <span className="text-[7px] md:text-[9px] font-bold text-[#4a56a2] tracking-[0.2em] uppercase whitespace-nowrap px-2">
-                   A Way of Success
-                 </span>
+              {/* --- START: YOUR TAGLINE CODE --- */}
+              <div className="flex items-center w-full mt-1">
+                {/* Gradient Line Left */}
+                <div className="h-[1px] bg-gradient-to-r from-transparent to-primary w-25 md:w-40"></div>
 
-                 {/* Gradient Line Right */}
-                 <div className="h-[1px] bg-gradient-to-l from-transparent to-[#4a56a2] w-full"></div>
-               </div>
-               {/* --- END: YOUR TAGLINE CODE --- */}
+                {/* Tagline Text */}
+                <span className="text-[7px] md:text-[9px] font-bold text-primary tracking-[0.2em] uppercase whitespace-nowrap px-2">
+                  A Way of Success
+                </span>
 
-             </div>
+                {/* Gradient Line Right */}
+                <div className="h-[1px] bg-gradient-to-l from-transparent to-primary w-full"></div>
+              </div>
+              {/* --- END: YOUR TAGLINE CODE --- */}
+
+            </div>
           </Link>
 
           {/* 2. DESKTOP LINKS */}
