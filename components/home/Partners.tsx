@@ -47,7 +47,7 @@ const Partners = () => {
             {/* Next Button */}
             <button
               aria-label="Next partner"
-              className="w-10 h-10 rounded-full bg-[#4a56a2] shadow-lg text-white flex items-center justify-center hover:bg-blue-800 transition flex-shrink-0 cursor-default"
+              className="w-10 h-10 rounded-full bg-primary shadow-lg text-white flex items-center justify-center hover:bg-blue-800 transition flex-shrink-0 cursor-default"
             >
               <FaChevronRight className="text-sm" />
             </button>

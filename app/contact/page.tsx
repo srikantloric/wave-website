@@ -15,7 +15,7 @@ export default function ContactPage() {
     <div className="font-sans antialiased text-gray-800">
 
       {/* ================= SECTION 1: HEADER ================= */}
-      <section className="bg-[#4a56a2] text-white py-12 md:py-20 text-center">
+      <section className="bg-primary text-white py-12 md:py-20 text-center">
         <div className="container mx-auto px-4 md:px-6">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-3 md:mb-4 leading-tight">
             Contact Us
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 
                 {/* Address */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center flex-shrink-0">
                     <FaMapMarkerAlt className="text-lg lg:text-xl" />
                   </div>
                   <div>
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center flex-shrink-0">
                     <FaPhoneAlt className="text-lg lg:text-lg" />
                   </div>
                   <div>
@@ -78,7 +78,7 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex flex-col lg:flex-row items-center lg:items-start gap-2 lg:gap-6 text-center lg:text-left">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-[#4a56a2] rounded-full flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-blue-100 text-primary rounded-full flex items-center justify-center flex-shrink-0">
                     <FaEnvelope className="text-lg lg:text-lg" />
                   </div>
                   <div>

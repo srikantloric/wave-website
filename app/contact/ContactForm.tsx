@@ -96,7 +96,7 @@ export default function ContactForm() {
           className={`w-full text-white font-bold py-3 md:py-4 rounded-lg transition shadow-md text-sm md:text-base flex items-center justify-center gap-3
             ${isSubmitting 
               ? 'bg-gray-400 cursor-not-allowed' 
-              : 'bg-[#4a56a2] hover:bg-blue-800 transition transform hover:-translate-y-0.5 active:scale-95'
+              : 'bg-primary hover:bg-blue-800 transition transform hover:-translate-y-0.5 active:scale-95'
             }`}
         >
           {isSubmitting && (

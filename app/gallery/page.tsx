@@ -12,7 +12,7 @@ export default function GalleryPage() {
     <div className="font-sans antialiased text-gray-800">
 
       {/* ================= SECTION 1: HEADER (Server Side Rendered) ================= */}
-      <section className="bg-[#4a56a2] text-white py-12 md:py-20 text-center relative overflow-hidden">
+      <section className="bg-primary text-white py-12 md:py-20 text-center relative overflow-hidden">
         {/* Background Blob */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white opacity-5 rounded-full blur-3xl pointer-events-none"></div>
         

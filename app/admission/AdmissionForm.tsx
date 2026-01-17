@@ -34,30 +34,29 @@ export default function AdmissionForm() {
 
   return (
     <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-      <div className="h-2 bg-[#4a56a2] w-full"></div>
-      
+      <div className="h-2 bg-primary w-full"></div>
+
       {status && (
-        <div className={`m-6 p-4 rounded-lg text-center font-bold ${
-          status.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-        }`}>
+        <div className={`m-6 p-4 rounded-lg text-center font-bold ${status.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+          }`}>
           {status.msg}
         </div>
       )}
 
       <form ref={formRef} action={handleAction} className="p-6 md:p-12 space-y-10">
-        
+
         {/* --- 1. Student Details --- */}
         <div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#4a56a2] mb-6 flex items-center gap-2">
+          <h3 className="text-xl md:text-2xl font-bold text-primary mb-6 flex items-center gap-2">
             <FaUser className="text-lg md:text-xl" /> Student Information
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-2">First Name</label>
               <input type="text" name="firstName" required placeholder="Enter first name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white" />
             </div>
-            
+
             <div>
               <label className="block text-sm font-bold text-gray-700 mb-2">Last Name</label>
               <input type="text" name="lastName" required placeholder="Enter last name" className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#4a56a2] focus:ring-2 focus:ring-blue-100 outline-none transition bg-gray-50 focus:bg-white" />
@@ -108,7 +107,7 @@ export default function AdmissionForm() {
 
         {/* --- 2. Parent / Guardian Details --- */}
         <div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#4a56a2] mb-6 flex items-center gap-2">
+          <h3 className="text-xl md:text-2xl font-bold text-primary mb-6 flex items-center gap-2">
             <FaUser className="text-lg md:text-xl" /> Parent Information
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -169,13 +168,13 @@ export default function AdmissionForm() {
 
         {/* --- Submit Button --- */}
         <div className="pt-6">
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             disabled={isSubmitting}
             className={`w-full text-white font-bold text-lg py-4 rounded-xl transition shadow-lg flex items-center justify-center gap-3 
-              ${isSubmitting 
-                ? 'bg-gray-400 cursor-not-allowed' 
-                : 'bg-[#4a56a2] hover:bg-blue-800 transform hover:-translate-y-1 active:scale-95'
+              ${isSubmitting
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-primary hover:bg-blue-800 transform hover:-translate-y-1 active:scale-95'
               }`}
           >
             {isSubmitting && (

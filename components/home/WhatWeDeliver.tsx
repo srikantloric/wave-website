@@ -25,7 +25,7 @@ const WhatWeDeliver = () => {
             <Link 
               href="/contact"
               aria-label="Contact Wave International School"
-              className="inline-block bg-[#4a56a2] text-white px-8 py-3 rounded-full hover:bg-blue-800 transition shadow-lg font-bold text-sm"
+              className="inline-block bg-primary text-white px-8 py-3 rounded-full hover:bg-blue-800 transition shadow-lg font-bold text-sm"
             >
                 Contact Us
             </Link>
@@ -54,7 +54,7 @@ const WhatWeDeliver = () => {
                     {/* Play Button */}
                     <button 
                       aria-label="Play Audio Lesson"
-                      className="w-8 h-8 xl:w-10 xl:h-10 flex items-center justify-center bg-[#4a56a2] text-white rounded-full hover:bg-blue-800 transition flex-shrink-0 shadow-md"
+                      className="w-8 h-8 xl:w-10 xl:h-10 flex items-center justify-center bg-primary text-white rounded-full hover:bg-blue-800 transition flex-shrink-0 shadow-md"
                     >
                         <FaPlay className="text-[10px] xl:text-xs ml-0.5" />
                     </button>
@@ -68,7 +68,7 @@ const WhatWeDeliver = () => {
                         </div>
                         {/* Progress Bar */}
                         <div className="w-full h-1 xl:h-1.5 bg-gray-200 rounded-full overflow-hidden">
-                             <div className="w-1/3 h-full bg-[#4a56a2]"></div>
+                             <div className="w-1/3 h-full bg-primary"></div>
                         </div>
                     </div>
                     

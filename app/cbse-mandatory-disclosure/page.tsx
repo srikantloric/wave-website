@@ -31,7 +31,7 @@ export default function CBSEDisclosurePage() {
     <div className="font-sans antialiased text-gray-800 bg-gray-50 min-h-screen">
 
       {/* ================= SECTION 1: THEME HEADER ================= */}
-      <section className="bg-[#4a56a2] text-white py-12 md:py-16 text-center">
+      <section className="bg-primary text-white py-12 md:py-16 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-extrabold mb-2 leading-tight">
             CBSE Mandatory Disclosure
@@ -53,8 +53,8 @@ export default function CBSEDisclosurePage() {
              
              {/* Table Header */}
              <div className="hidden md:flex justify-between items-center bg-gray-50 px-8 py-4 border-b border-gray-200">
-                 <h3 className="text-[#4a56a2] font-bold text-lg uppercase tracking-wider">Description</h3>
-                 <h3 className="text-[#4a56a2] font-bold text-lg uppercase tracking-wider">Download</h3>
+                 <h3 className="text-primary font-bold text-lg uppercase tracking-wider">Description</h3>
+                 <h3 className="text-primary font-bold text-lg uppercase tracking-wider">Download</h3>
              </div>
 
              {/* Table Body - List of Documents */}
@@ -81,7 +81,7 @@ export default function CBSEDisclosurePage() {
                                href={doc.link} 
                                target="_blank" 
                                rel="noopener noreferrer"
-                               className="group flex items-center justify-center gap-2 bg-white text-[#4a56a2] border-2 border-[#4a56a2] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#4a56a2] hover:text-white transition-all duration-300 shadow-sm w-full md:w-auto"
+                               className="group flex items-center justify-center gap-2 bg-white text-primary border-2 border-primary px-6 py-2.5 rounded-full font-bold text-sm hover:bg-[#4a56a2] hover:text-white transition-all duration-300 shadow-sm w-full md:w-auto"
                            >
                                <span>Download</span>
                                <FaDownload className="text-xs group-hover:animate-bounce" />

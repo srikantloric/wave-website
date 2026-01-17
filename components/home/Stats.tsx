@@ -35,7 +35,7 @@ const Stats = () => {
   ];
 
   return (
-    <div className="w-full bg-[#4a56a2] text-white py-10 md:py-14">
+    <div className="w-full bg-primary text-white py-10 md:py-14">
 
       <div className="container mx-auto px-6 lg:px-20">
 

@@ -91,6 +91,7 @@ export default function MessageCarousel({ profiles }: { profiles: Profile[] }) {
 
                     <h3 className={`${currentProfile.roleColor} font-bold tracking-widest text-xs lg:text-sm uppercase mb-2`}>{currentProfile.role}</h3>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">{currentProfile.title}</h2>
+                    
                     {/* Contrast safe gray */}
                     <p className="text-gray-700 leading-relaxed text-base lg:text-lg mb-8 min-h-[80px]">"{currentProfile.quote}"</p>
                     <div className="inline-block">
@@ -108,7 +109,7 @@ export default function MessageCarousel({ profiles }: { profiles: Profile[] }) {
                     key={index}
                     onClick={() => setCurrentIndex(index)}
                     aria-label={`Go to slide ${index + 1}`}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-[#6C5CE7] w-8' : 'bg-gray-300 hover:bg-[#6C5CE7]'}`}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 hover:bg-primary'}`}
                 />
             ))}
         </div>

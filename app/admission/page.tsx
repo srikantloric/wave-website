@@ -12,7 +12,7 @@ export default function AdmissionPage() {
   return (
     <div className="font-sans antialiased text-gray-800 bg-gray-50 min-h-screen">
       {/* ================= SECTION 1: HEADER ================= */}
-      <section className="bg-[#4a56a2] text-white py-16 md:py-20 text-center">
+      <section className="bg-primary text-white py-16 md:py-20 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">
             Admission Form
